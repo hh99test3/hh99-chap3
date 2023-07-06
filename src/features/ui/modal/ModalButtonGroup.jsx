@@ -1,24 +1,19 @@
 import { styled } from "styled-components";
 import Button from "../button/Button";
-import { useDispatch } from "react-redux";
-import { modalOpen } from "../../../redux/modules/modal";
 
-const ModalButtonGroup = () => {
-  const dispatch = useDispatch();
-  const openPopUpModal = (id) => dispatch(modalOpen(id));
-
+const ModalButtonGroup = ({ onModalOpen }) => {
   return (
     <StyledModalButtonGroup>
       <Button
         text="open modal"
         color="blue"
-        onClick={() => openPopUpModal("large")}
+        onClick={() => onModalOpen("large")}
       />
       <Button
         text="open modal"
         color="red"
         size="large"
-        onClick={() => openPopUpModal("small")}
+        onClick={() => onModalOpen("small")}
         primary="true"
       />
     </StyledModalButtonGroup>

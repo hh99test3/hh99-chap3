@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { ButtonTemplate } from "../features/ui/button/ButtonTemplate";
 import {
   BlueButtonGroup,
   RedButtonGroup,
 } from "../features/ui/button/ButtonGroup";
-import { ButtonTemplate } from "../features/ui/button/ButtonTemplate";
+import { ModalTemplate } from "../features/ui/modal/ModalTemplate";
 import ModalButtonGroup from "../features/ui/modal/ModalButtonGroup";
 import { LargeModal, SmallModal } from "../features/ui/modal/ModalGroup";
-import { ModalTemplate } from "../features/ui/modal/ModalTemplate";
 import Portal from "../helpers/Portal";
 
 const Home = () => {

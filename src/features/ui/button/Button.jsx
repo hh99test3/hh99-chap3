@@ -27,7 +27,7 @@ const StyledButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
 
-  //when Button is hover event
+  //when Button is click event
 
   &:active {
     filter: brightness(80%);

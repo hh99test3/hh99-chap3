@@ -7,7 +7,7 @@ const PortalTarget = () => {
   const dispatch = useDispatch();
 
   const closePopUpModal = (id) => dispatch(modalClose(id));
-
+  console.log("good!!!!!!");
   return (
     <>
       {modal.large && <LargeModal onRemove={() => closePopUpModal("large")} />}

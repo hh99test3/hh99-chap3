@@ -1,5 +1,10 @@
 import React, { useCallback, useState } from "react";
-import { DropDown, DropDownOpen, DropDownContainer } from "./SelectStyle";
+import {
+  DropDown,
+  DropDownOpen,
+  DropDownContainer,
+  Message,
+} from "./SelectStyle";
 /**
  *
  * @param {boolean} overflow overflow를 써주면 hidden 활성화
@@ -8,12 +13,20 @@ import { DropDown, DropDownOpen, DropDownContainer } from "./SelectStyle";
 export const Select = ({ overflow }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [displayName, setDisplayName] = useState("리엑트");
+  const [isMessageShowing, setIsMessageShowing] = useState(false);
+  const [fade, setFade] = useState(true);
 
   const onSelectHandler = useCallback((e) => {
     setDisplayName(e.target.innerText);
+    setIsMessageShowing(true);
+    setFade(false);
     setIsOpen(false);
-  }, []);
 
+    setTimeout(() => {
+      setIsMessageShowing(false);
+      setFade(true);
+    }, 1000);
+  }, []);
   return (
     <DropDownContainer {...(overflow ? { overflow } : {})}>
       <DropDown
@@ -21,7 +34,10 @@ export const Select = ({ overflow }) => {
           setIsOpen(!isOpen);
         }}
       >
-        <span>{displayName}</span>
+        <span>{!isMessageShowing && displayName}</span>
+        <Message className={fade ? "hide" : ""}>
+          어머! {displayName}라니! 멋져요!
+        </Message>
         <div>▼</div>
       </DropDown>
       {isOpen ? (
@@ -39,9 +55,7 @@ export const Select = ({ overflow }) => {
             노드
           </DropDown>
         </DropDownOpen>
-      ) : (
-        ""
-      )}
+      ) : null}
     </DropDownContainer>
   );
 };

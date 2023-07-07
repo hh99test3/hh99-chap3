@@ -6,7 +6,7 @@ export const DropDown = styled.button`
   align-items: center;
 
   height: 38px;
-  width: 242px;
+  width: 244px;
   padding: 0px 30px;
 
   border: ${(prop) => (prop.inner ? 0 : 1)}px solid rgb(221, 221, 221);
@@ -32,4 +32,16 @@ export const DropDownOpen = styled.div`
 
 export const DropDownContainer = styled.div`
   overflow: ${(prop) => (prop.overflow ? "hidden" : "")};
+`;
+
+export const Message = styled.span`
+  position: absolute;
+
+  color: red;
+  font-weight: 900;
+  opacity: 1;
+  transition: opacity 0.5s;
+  &.hide {
+    opacity: 0;
+  }
 `;

@@ -1,5 +1,2 @@
-// import React from "react";
-
-// export const InputStyle = () => {
-//   return <div>InputStyle</div>;
-// };
+//필요 없어서 사용하지 않음.
+//최종본까지 파일 히스토리 기록을 위해 남겨둠.

@@ -7,6 +7,8 @@ const Container = styled.div`
 
   height: 100px;
   width: 600px;
+  padding: 20px 20px 0px 20px;
+  gap: 10px;
 
   border: 2px solid grey;
 `;

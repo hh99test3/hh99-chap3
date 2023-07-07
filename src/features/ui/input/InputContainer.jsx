@@ -9,29 +9,10 @@ const Container = styled.form`
 
 export const InputContainer = () => {
   const [input, setInput] = useState({ name: "", price: "" });
-  const [shownNumber, setShownNumber] = useState("");
 
   const onChangePrice = (e) => {
-    console.log(e.nativeEvent.data);
-    let temp_value = "";
-    if (e.nativeEvent.data !== null) {
-      //입력 기능
-      temp_value = Number(
-        shownNumber.concat(e.nativeEvent.data).replace(/[^\d]/g, "")
-      );
-    } else {
-      //지우기 기능
-      temp_value = Number(
-        shownNumber.slice(0, shownNumber.length - 1).replace(/[^\d]/g, "")
-      );
-    }
-
-    setInput({ ...input, price: temp_value }); //실제 값 수정
-    setShownNumber(temp_value.toLocaleString()); //콤마붙인 shown값 수정
-    if (shownNumber === "0") {
-      //0이면 지워주기
-      setShownNumber("");
-    }
+    const temp_value = e.target.value.replace(/[^\d]/g, ""); //숫자이외 삭제
+    setInput({ ...input, price: Number(temp_value) }); //string->number
   };
 
   const onChange = (e) => {
@@ -54,7 +35,7 @@ export const InputContainer = () => {
       />
       <Input
         type="text"
-        shownValue={shownNumber}
+        shownValue={input.price.toLocaleString()}
         name="price"
         onChange={onChangePrice}
         title={"가격"}

@@ -15,7 +15,7 @@ export const SelectContainer = () => {
   return (
     <Container>
       <Select />
-      <Select overflow />
+      <Select overflow="true" />
     </Container>
   );
 };

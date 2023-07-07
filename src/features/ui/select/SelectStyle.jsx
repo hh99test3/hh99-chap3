@@ -9,12 +9,12 @@ export const DropDown = styled.button`
   width: 242px;
   padding: 0px 30px;
 
-  border: ${(prop) => (prop.Inner ? 0 : 1)}px solid rgb(221, 221, 221);
-  border-radius: ${(prop) => (prop.Inner ? 0 : 12)}px;
+  border: ${(prop) => (prop.inner ? 0 : 1)}px solid rgb(221, 221, 221);
+  border-radius: ${(prop) => (prop.inner ? 0 : 12)}px;
 
   background-color: rgb(255, 255, 255);
   &:hover {
-    background-color: ${(prop) => (prop.Inner ? "rgb(230, 230, 230)" : "")};
+    background-color: ${(prop) => (prop.inner ? "rgb(230, 230, 230)" : "")};
   }
 `;
 

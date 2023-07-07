@@ -7,8 +7,10 @@ const Container = styled.div`
 
   height: 100px;
   width: 600px;
+
   border: 2px solid grey;
 `;
+
 export const SelectContainer = () => {
   return (
     <Container>

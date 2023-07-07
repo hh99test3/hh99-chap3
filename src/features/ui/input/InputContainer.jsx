@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "./Input";
 import { styled } from "styled-components";
+import Button from "../button/Button";
 
 const Container = styled.form`
   display: flex;
@@ -40,7 +41,7 @@ export const InputContainer = () => {
         onChange={onChangePrice}
         title={"가격"}
       />
-      <button onClick={onSubmitHandler}>민승's 저장버튼예정지</button>
+      <Button text="제출" color="blue" onClick={onSubmitHandler} />
     </Container>
   );
 };

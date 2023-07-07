@@ -25,7 +25,8 @@ const Home = () => {
         <BlueButtonGroup />
         <RedButtonGroup />
       </ButtonTemplate>
-      <InputContainer>Inputcontainer</InputContainer>
+      <h1>Input</h1>
+      <InputContainer />
       <ModalTemplate>
         <h1>Modal</h1>
         <ModalButtonGroup onModalOpen={openModalHandler} />
@@ -34,9 +35,10 @@ const Home = () => {
           {modal.small && <SmallModal onModalDown={closeModalHandler} />}
         </Portal>
       </ModalTemplate>
-      <SelectContainer>SelectContainer</SelectContainer>
-  </>
-)}
-
+      <h1>Select</h1>
+      <SelectContainer />
+    </>
+  );
+};
 
 export default Home;
